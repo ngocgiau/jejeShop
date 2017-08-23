@@ -12,9 +12,11 @@ namespace jejeShop.Model.Models
     public class OrderDetail
     {
         [Key]
+        [Column (Order =1)]
         public int OrderID { set; get; }
 
         [Key]
+        [Column(Order = 2)]
         public int ProductID { set; get; }
         [Required]
         public int Quantity { set; get; }

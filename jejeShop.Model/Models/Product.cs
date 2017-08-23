@@ -24,7 +24,8 @@ namespace jejeShop.Model.Models
         [MaxLength(256)]
 
         public string Image { set; get; }
-        public XElement MoreImages { set; get; }
+        [Column(TypeName ="xml")]
+        public string MoreImages { set; get; }
         public decimal price { set; get; }
         public decimal? Promotionprice { set; get; }
         public int? warranty { set; get; }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace jejeShop.Model.Models
@@ -7,18 +8,18 @@ namespace jejeShop.Model.Models
     public class PostTag
     {
         [Key]
+        [Column(Order = 1)]
         public int PostID { set; get; }
 
         [Key]
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "varchar", Order = 2)]
         [MaxLength(50)]
-        [Required]
-        public int TagsID { set; get; }
+        public string TagID { set; get; }
 
         [ForeignKey("PostID")]
         public virtual Post Post { set; get; }
 
-        [ForeignKey("tagID")]
+        [ForeignKey("TagID")]
         public virtual Tag Tag { set; get; }
     }
 }
