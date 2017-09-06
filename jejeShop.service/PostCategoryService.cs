@@ -2,10 +2,11 @@
 using jejeShop.Data.Repositories;
 using jejeShop.Model.Models;
 using System.Collections.Generic;
+using System;
 
 namespace jejeShop.service
 {
-    public interface IpostCategoryService
+    public interface IPostCategoryService
     {
         PostCategory Add(PostCategory postCategory);
 
@@ -18,9 +19,10 @@ namespace jejeShop.service
         IEnumerable<PostCategory> GetAllByParentId(int parentId);
 
         PostCategory GetById(int id);
+        void Save();
     }
 
-    public class PostCategoryService : IpostCategoryService
+    public class PostCategoryService : IPostCategoryService
     {
         private IPostCategoryRepository _postCategoryRepository;
         private IUnitOfWork _unitOfWork;
@@ -54,6 +56,11 @@ namespace jejeShop.service
         public PostCategory GetById(int id)
         {
             return _postCategoryRepository.GetSingleById(id);
+        }
+
+        public void Save()
+        {
+            _unitOfWork.Commit();
         }
 
         public void Update(PostCategory postCategory)

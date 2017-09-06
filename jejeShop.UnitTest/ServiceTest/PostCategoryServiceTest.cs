@@ -17,7 +17,7 @@ namespace jejeShop.UnitTest.ServiceTest
     {
         private Mock<IPostCategoryRepository> _mockRepository;
         private Mock<IUnitOfWork> _mockunitOfWork;
-        private IpostCategoryService _categoryService;
+        private IPostCategoryService _categoryService;
         private List<PostCategory> listCategory;
         private List<PostCategory> _listCategory;
 
