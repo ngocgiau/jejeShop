@@ -32,6 +32,7 @@ namespace jejeShop.Data
 
         protected override void OnModelCreating(DbModelBuilder Builder)
         {
+            base.OnModelCreating(Builder);
         }
     }
 }

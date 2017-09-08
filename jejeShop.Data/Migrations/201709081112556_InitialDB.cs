@@ -8,6 +8,17 @@ namespace jejeShop.Data.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Errors",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Message = c.String(),
+                        StackTrace = c.String(),
+                        CreateDate = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+           /* CreateTable(
                 "dbo.Footers",
                 c => new
                     {
@@ -278,7 +289,7 @@ namespace jejeShop.Data.Migrations
                         VistiedDate = c.DateTime(nullable: false),
                         IPAddress = c.String(nullable: false, maxLength: 50, unicode: false),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.ID);*/
             
         }
         
@@ -319,6 +330,7 @@ namespace jejeShop.Data.Migrations
             DropTable("dbo.Menus");
             DropTable("dbo.MenuGroups");
             DropTable("dbo.Footers");
+            DropTable("dbo.Errors");
         }
     }
 }

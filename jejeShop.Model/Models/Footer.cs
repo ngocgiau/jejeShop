@@ -8,7 +8,6 @@ namespace jejeShop.Model.Models
     {
         [Key]
         [MaxLength(50)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string ID { set; get; }
 
         [Required]
