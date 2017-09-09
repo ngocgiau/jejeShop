@@ -13,7 +13,7 @@ namespace jejeShop.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201709081112556_InitialDB"; }
+            get { return "201709090837156_InitialDB"; }
         }
         
         string IMigrationMetadata.Source

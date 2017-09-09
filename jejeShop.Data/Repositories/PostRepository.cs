@@ -21,7 +21,7 @@ namespace jejeShop.Data.Repositories
                         join pt in DbContext.PostTags
                         on p.ID equals pt.PostID
                         where pt.TagID == tag && p.Status
-                        orderby p.CreatedData descending
+                        orderby p.CreatedDate descending
                         select p;
             totalRow = query.Count();
 

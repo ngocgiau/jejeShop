@@ -4,10 +4,10 @@ namespace jejeShop.Model.Abstract
 {
     public interface IAuditable
     {
-        DateTime? CreatedData { set; get; }
+        DateTime? CreatedDate { set; get; }
         string CreatedBy { set; get; }
-        DateTime? UpdateData { set; get; }
-        string UpdateBy { set; get; }
+        DateTime? UpdatedDate { set; get; }
+        string UpdatedBy { set; get; }
 
         string MetaKeyword { set; get; }
         string MetaDescription { set; get; }

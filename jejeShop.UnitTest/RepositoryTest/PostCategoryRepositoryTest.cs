@@ -9,22 +9,22 @@ namespace jejeShop.UnitTest.RepositoryTest
     [TestClass]
     public class PostCategoryRepositoryTest
     {
-        private IDbFactory dbfactory;
-        private IPostCategoryRepository objRepository;
-        private IUnitOfWork unitOfWork;
+         IDbFactory dbFactory;
+         IPostCategoryRepository objRepository;
+         IUnitOfWork unitOfWork;
 
         [TestInitialize]
         public void Initialize()
         {
-            dbfactory = new DbFactory();
-            objRepository = new PostCategoryRepository(dbfactory);
-            unitOfWork = new UnitOfWork(dbfactory);
+            dbFactory = new DbFactory();
+            objRepository = new PostCategoryRepository(dbFactory);
+            unitOfWork = new UnitOfWork(dbFactory);
         }
         [TestMethod]
         public void PostCategory_Repository_GetAll()
         {
             var list = objRepository.GetAll().ToList();
-            Assert.AreEqual(3, list.Count);
+            Assert.AreEqual(7, list.Count);
         }
         [TestMethod]
         public void PostCategory_Repository_Create()
@@ -38,7 +38,7 @@ namespace jejeShop.UnitTest.RepositoryTest
             unitOfWork.Commit();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(1, result.ID);
+            Assert.AreEqual(7, result.ID);
         }
     }
 }

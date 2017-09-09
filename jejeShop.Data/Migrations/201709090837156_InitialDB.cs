@@ -18,7 +18,7 @@ namespace jejeShop.Data.Migrations
                     })
                 .PrimaryKey(t => t.ID);
             
-           /* CreateTable(
+            CreateTable(
                 "dbo.Footers",
                 c => new
                     {
@@ -102,10 +102,10 @@ namespace jejeShop.Data.Migrations
                         HomeFlag = c.Boolean(),
                         HotFlag = c.Boolean(),
                         ViewCount = c.Int(),
-                        CreatedData = c.DateTime(),
+                        CreatedDate = c.DateTime(),
                         CreatedBy = c.String(maxLength: 256),
-                        UpdateData = c.DateTime(),
-                        UpdateBy = c.String(maxLength: 256),
+                        UpdatedDate = c.DateTime(),
+                        UpdatedBy = c.String(maxLength: 256),
                         MetaKeyword = c.String(maxLength: 256),
                         MetaDescription = c.String(maxLength: 256),
                         Status = c.Boolean(nullable: false),
@@ -126,10 +126,10 @@ namespace jejeShop.Data.Migrations
                         DisplayOrder = c.Int(),
                         Image = c.String(maxLength: 256),
                         HomeFlag = c.Boolean(),
-                        CreatedData = c.DateTime(),
+                        CreatedDate = c.DateTime(),
                         CreatedBy = c.String(maxLength: 256),
-                        UpdateData = c.DateTime(),
-                        UpdateBy = c.String(maxLength: 256),
+                        UpdatedDate = c.DateTime(),
+                        UpdatedBy = c.String(maxLength: 256),
                         MetaKeyword = c.String(maxLength: 256),
                         MetaDescription = c.String(maxLength: 256),
                         Status = c.Boolean(nullable: false),
@@ -144,10 +144,10 @@ namespace jejeShop.Data.Migrations
                         Name = c.String(nullable: false, maxLength: 256),
                         Alias = c.String(nullable: false, maxLength: 256, unicode: false),
                         Content = c.String(),
-                        CreatedData = c.DateTime(),
+                        CreatedDate = c.DateTime(),
                         CreatedBy = c.String(maxLength: 256),
-                        UpdateData = c.DateTime(),
-                        UpdateBy = c.String(maxLength: 256),
+                        UpdatedDate = c.DateTime(),
+                        UpdatedBy = c.String(maxLength: 256),
                         MetaKeyword = c.String(maxLength: 256),
                         MetaDescription = c.String(maxLength: 256),
                         Status = c.Boolean(nullable: false),
@@ -167,10 +167,10 @@ namespace jejeShop.Data.Migrations
                         Description = c.String(maxLength: 500),
                         Content = c.String(),
                         HomeFlag = c.Boolean(),
-                        CreatedData = c.DateTime(),
+                        CreatedDate = c.DateTime(),
                         CreatedBy = c.String(maxLength: 256),
-                        UpdateData = c.DateTime(),
-                        UpdateBy = c.String(maxLength: 256),
+                        UpdatedDate = c.DateTime(),
+                        UpdatedBy = c.String(maxLength: 256),
                         MetaKeyword = c.String(maxLength: 256),
                         MetaDescription = c.String(maxLength: 256),
                         Status = c.Boolean(nullable: false),
@@ -191,10 +191,10 @@ namespace jejeShop.Data.Migrations
                         HomeFlag = c.Boolean(),
                         Hotflag = c.Boolean(),
                         ViewCount = c.Int(),
-                        CreatedData = c.DateTime(),
+                        CreatedDate = c.DateTime(),
                         CreatedBy = c.String(maxLength: 256),
-                        UpdateData = c.DateTime(),
-                        UpdateBy = c.String(maxLength: 256),
+                        UpdatedDate = c.DateTime(),
+                        UpdatedBy = c.String(maxLength: 256),
                         MetaKeyword = c.String(maxLength: 256),
                         MetaDescription = c.String(maxLength: 256),
                         Status = c.Boolean(nullable: false),
@@ -289,7 +289,7 @@ namespace jejeShop.Data.Migrations
                         VistiedDate = c.DateTime(nullable: false),
                         IPAddress = c.String(nullable: false, maxLength: 50, unicode: false),
                     })
-                .PrimaryKey(t => t.ID);*/
+                .PrimaryKey(t => t.ID);
             
         }
         
