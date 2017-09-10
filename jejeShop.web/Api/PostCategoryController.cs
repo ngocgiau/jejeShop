@@ -1,6 +1,10 @@
-﻿using jejeShop.Model.Models;
+﻿using AutoMapper;
+using jejeShop.Model.Models;
 using jejeShop.service;
 using jejeShop.web.Infrastructure.Core;
+using jejeShop.web.Infrastructure.Extensions;
+using jejeShop.web.Models;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -10,7 +14,7 @@ namespace jejeShop.web.Api
     [RoutePrefix("api/postcategory")]
     public class PostCategoryController : ApiControllerBase
     {
-        IPostCategoryService _postCategoryService;
+        private IPostCategoryService _postCategoryService;
 
         public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService) :
             base(errorService)
@@ -25,14 +29,16 @@ namespace jejeShop.web.Api
             {
                 var listCategory = _postCategoryService.GetAll();
 
-                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategory);
+                var listPostCategoryVm = Mapper.Map<List<PostCategoryViewModel>>(listCategory);
 
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategory);
 
                 return response;
             });
         }
 
-        public HttpResponseMessage Post(HttpRequestMessage request, PostCategory postCategory)
+        [Route("add")]
+        public HttpResponseMessage Post(HttpRequestMessage request, PostCategoryViewModel postCategoryVm)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -43,17 +49,19 @@ namespace jejeShop.web.Api
                 }
                 else
                 {
-                    var category = _postCategoryService.Add(postCategory);
+                    PostCategory newPostCategory = new PostCategory();
+                    newPostCategory.UpdatePostCategory(postCategoryVm);
+                    var category = _postCategoryService.Add(newPostCategory);
                     _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.Created, category);
-
                 }
                 return response;
             });
         }
 
-        public HttpResponseMessage Put(HttpRequestMessage request, PostCategory postCategory)
+        [Route("Update")]
+        public HttpResponseMessage Put(HttpRequestMessage request, PostCategoryViewModel postCategoryVm)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -64,11 +72,12 @@ namespace jejeShop.web.Api
                 }
                 else
                 {
-                    _postCategoryService.Update(postCategory);
+                    var postCategoryDb = _postCategoryService.GetById(postCategoryVm.ID);
+                    postCategoryDb.UpdatePostCategory(postCategoryVm);
+                    _postCategoryService.Update(postCategoryDb);
                     _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
-
                 }
                 return response;
             });
@@ -89,7 +98,6 @@ namespace jejeShop.web.Api
                     _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
-
                 }
                 return response;
             });
