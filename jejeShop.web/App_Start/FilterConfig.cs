@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace jejeShop.web
+namespace jejeShop.Web
 {
     public class FilterConfig
     {

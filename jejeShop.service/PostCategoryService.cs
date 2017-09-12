@@ -20,8 +20,7 @@ namespace jejeShop.service
 
         PostCategory GetById(int id);
         void Save();
-        object Add(object p);
-        object Add(object v);
+       
     }
 
     public class PostCategoryService : IPostCategoryService

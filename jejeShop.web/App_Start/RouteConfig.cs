@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace jejeShop.web
+namespace jejeShop.Web
 {
     public class RouteConfig
     {

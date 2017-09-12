@@ -1,9 +1,10 @@
 ﻿using jejeShop.Model.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 
 namespace jejeShop.Data
 {
-    public class jejeShopDbContext : DbContext
+    public class jejeShopDbContext : IdentityDbContext<ApplicationUser>
     {
         public jejeShopDbContext() : base("jejeShopConnection")
         {
@@ -29,10 +30,15 @@ namespace jejeShop.Data
         public DbSet<Tag> Tags { set; get; }
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errors { set; get; }
+        public static jejeShopDbContext Create()
+        {
+            return new jejeShopDbContext();
+        }
 
         protected override void OnModelCreating(DbModelBuilder Builder)
         {
-            
+            Builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
+            Builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }
     }
 }

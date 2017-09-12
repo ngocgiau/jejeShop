@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
 using jejeShop.Model.Models;
 using jejeShop.service;
-using jejeShop.web.Infrastructure.Core;
-using jejeShop.web.Infrastructure.Extensions;
-using jejeShop.web.Models;
+using jejeShop.Web.Infrastructure.Core;
+using jejeShop.Web.Infrastructure.Extensions;
+using jejeShop.Web.Models;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace jejeShop.web.Api
+namespace jejeShop.Web.Api
 {
     [RoutePrefix("api/postcategory")]
     public class PostCategoryController : ApiControllerBase

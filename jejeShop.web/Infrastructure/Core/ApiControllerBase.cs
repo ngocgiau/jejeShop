@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace jejeShop.web.Infrastructure.Core
+namespace jejeShop.Web.Infrastructure.Core
 {
     public class ApiControllerBase : ApiController
     {

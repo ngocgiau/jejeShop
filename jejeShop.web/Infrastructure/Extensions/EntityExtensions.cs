@@ -1,7 +1,7 @@
 ﻿using jejeShop.Model.Models;
-using jejeShop.web.Models;
+using jejeShop.Web.Models;
 
-namespace jejeShop.web.Infrastructure.Extensions
+namespace jejeShop.Web.Infrastructure.Extensions
 {
     public static class EntityExtensions
     {

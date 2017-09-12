@@ -1,16 +1,24 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using jejeShop.Model.Models;
-using jejeShop.web.Models;
+using jejeShop.Web.Models;
 
-namespace jejeShop.web.Mappings
+namespace jejeShop.Web.Mappings
 {
     public class AutoMapperConfiguration
     {
         public static void Configure()
         {
-            Mapper.CreateMap<Post, PostViewModel>();
-            Mapper.CreateMap<PostCategory, PostCategoryViewModel>();
-            Mapper.CreateMap<Tag, TagViewModel>();
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<PostCategory, PostCategoryViewModel>().MaxDepth(2);
+                cfg.CreateMap<Post, PostViewModel>().MaxDepth(2);
+                cfg.CreateMap<Tag, TagViewModel>().MaxDepth(2);
+
+
+            });
+
+
         }
     }
 }

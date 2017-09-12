@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace jejeShop.web.Models
+namespace jejeShop.Web.Models
 {
     public class PostTagViewModel
     {

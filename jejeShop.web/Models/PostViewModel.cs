@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace jejeShop.web.Models
+namespace jejeShop.Web.Models
 {
     public class PostViewModel
     {
