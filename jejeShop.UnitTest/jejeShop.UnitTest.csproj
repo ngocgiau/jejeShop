@@ -80,9 +80,9 @@
     <Compile Include="ServiceTest\PostCategoryServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\jejeShop.common\jejeShop.common.csproj">
+    <ProjectReference Include="..\jejeShop.common\jejeShop.Common.csproj">
       <Project>{df8e9e91-f131-4acb-87bc-bb456ee31387}</Project>
-      <Name>jejeShop.common</Name>
+      <Name>jejeShop.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\jejeShop.Data\jejeShop.Data.csproj">
       <Project>{77af1a75-ae2c-4649-a815-7437d73db42d}</Project>
@@ -96,9 +96,9 @@
       <Project>{30d20fc2-6518-430f-98a0-8796ba354568}</Project>
       <Name>jejeShop.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\jejeShop.web\jejeShop.web.csproj">
+    <ProjectReference Include="..\jejeShop.web\jejeShop.Web.csproj">
       <Project>{d89b85f5-e403-418c-80c8-92467c9d5e40}</Project>
-      <Name>jejeShop.web</Name>
+      <Name>jejeShop.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jejeShop.common", "jejeShop.common\jejeShop.common.csproj", "{DF8E9E91-F131-4ACB-87BC-BB456EE31387}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jejeShop.Common", "jejeShop.common\jejeShop.Common.csproj", "{DF8E9E91-F131-4ACB-87BC-BB456EE31387}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jejeShop.Model", "jejeShop.Model\jejeShop.Model.csproj", "{B01080D8-6718-4663-89DA-C49CE1969863}"
 EndProject
@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jejeShop.Service", "jejeSho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jejeShop.UnitTest", "jejeShop.UnitTest\jejeShop.UnitTest.csproj", "{5F31D1F0-4067-4CDB-93D3-560474024FD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jejeShop.web", "jejeShop.web\jejeShop.web.csproj", "{D89B85F5-E403-418C-80C8-92467C9D5E40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jejeShop.Web", "jejeShop.web\jejeShop.Web.csproj", "{D89B85F5-E403-418C-80C8-92467C9D5E40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

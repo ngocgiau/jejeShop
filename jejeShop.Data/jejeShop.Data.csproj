@@ -125,9 +125,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\jejeShop.common\jejeShop.common.csproj">
+    <ProjectReference Include="..\jejeShop.common\jejeShop.Common.csproj">
       <Project>{df8e9e91-f131-4acb-87bc-bb456ee31387}</Project>
-      <Name>jejeShop.common</Name>
+      <Name>jejeShop.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\jejeShop.Model\jejeShop.Model.csproj">
       <Project>{b01080d8-6718-4663-89da-c49ce1969863}</Project>
