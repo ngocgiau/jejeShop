@@ -19,6 +19,7 @@ define( [
 	"./effects/Tween"
 ], function( jQuery, document, rcssNum, rnothtmlwhite, cssExpand, isHiddenWithinTree, swap,
 	adjustCSS, dataPriv, showHide ) {
+
 "use strict";
 
 var
@@ -74,6 +75,7 @@ function createTween( value, prop, animation ) {
 		length = collection.length;
 	for ( ; index < length; index++ ) {
 		if ( ( tween = collection[ index ].call( animation, prop, value ) ) ) {
+
 			// We're done with this property
 			return tween;
 		}
@@ -104,6 +106,7 @@ function defaultPrefilter( elem, props, opts ) {
 		hooks.unqueued++;
 
 		anim.always( function() {
+
 			// Ensure the complete handler is called before this completes
 			anim.always( function() {
 				hooks.unqueued--;
@@ -121,6 +124,7 @@ function defaultPrefilter( elem, props, opts ) {
 			delete props[ prop ];
 			toggle = toggle || value === "toggle";
 			if ( value === ( hidden ? "hide" : "show" ) ) {
+
 				// Pretend to be hidden if this is a "show" and
 				// there is still data from a stopped show/hide
 				if ( value === "show" && dataShow && dataShow[ prop ] !== undefined ) {
@@ -143,6 +147,7 @@ function defaultPrefilter( elem, props, opts ) {
 
 	// Restrict "overflow" and "display" styles during box animations
 	if ( isBox && elem.nodeType === 1 ) {
+
 		// Support: IE <=9 - 11, Edge 12 - 13
 		// Record all 3 overflow attributes because IE does not infer the shorthand
 		// from identically-valued overflowX and overflowY
@@ -158,6 +163,7 @@ function defaultPrefilter( elem, props, opts ) {
 			if ( restoreDisplay ) {
 				display = restoreDisplay;
 			} else {
+
 				// Get nonempty value(s) by temporarily forcing visibility
 				showHide( [ elem ], true );
 				restoreDisplay = elem.style.display || restoreDisplay;
@@ -169,6 +175,7 @@ function defaultPrefilter( elem, props, opts ) {
 		// Animate inline elements as inline-block
 		if ( display === "inline" || display === "inline-block" && restoreDisplay != null ) {
 			if ( jQuery.css( elem, "float" ) === "none" ) {
+
 				// Restore the original display value at the end of pure show/hide animations
 				if ( !propTween ) {
 					anim.done( function() {
@@ -196,6 +203,7 @@ function defaultPrefilter( elem, props, opts ) {
 	// Implement show/hide animations
 	propTween = false;
 	for ( prop in orig ) {
+
 		// General show/hide setup for this element animation
 		if ( !propTween ) {
 			if ( dataShow ) {
@@ -219,6 +227,7 @@ function defaultPrefilter( elem, props, opts ) {
 			/* eslint-disable no-loop-func */
 
 			anim.done( function() {
+
 			/* eslint-enable no-loop-func */
 
 				// The final step of a "hide" animation is actually hiding the element
@@ -287,6 +296,7 @@ function Animation( elem, properties, options ) {
 		index = 0,
 		length = Animation.prefilters.length,
 		deferred = jQuery.Deferred().always( function() {
+
 			// Don't match elem in the :animated selector
 			delete tick.elem;
 		} ),
@@ -406,6 +416,7 @@ function Animation( elem, properties, options ) {
 }
 
 jQuery.Animation = jQuery.extend( Animation, {
+
 	tweeners: {
 		"*": [ function( prop, value ) {
 			var tween = this.createTween( prop, value );
@@ -455,10 +466,12 @@ jQuery.speed = function( speed, easing, fn ) {
 	// Go to the end state if fx are off
 	if ( jQuery.fx.off ) {
 		opt.duration = 0;
+
 	} else {
 		if ( typeof opt.duration !== "number" ) {
 			if ( opt.duration in jQuery.fx.speeds ) {
 				opt.duration = jQuery.fx.speeds[ opt.duration ];
+
 			} else {
 				opt.duration = jQuery.fx.speeds._default;
 			}
@@ -488,6 +501,7 @@ jQuery.speed = function( speed, easing, fn ) {
 
 jQuery.fn.extend( {
 	fadeTo: function( speed, to, easing, callback ) {
+
 		// Show any hidden elements after setting opacity to 0
 		return this.filter( isHiddenWithinTree ).css( "opacity", 0 ).show()
 
@@ -498,6 +512,7 @@ jQuery.fn.extend( {
 		var empty = jQuery.isEmptyObject( prop ),
 			optall = jQuery.speed( speed, easing, callback ),
 			doAnimation = function() {
+
 				// Operate on a copy of prop so per-property easing won't be lost
 				var anim = Animation( this, jQuery.extend( {}, prop ), optall );
 
@@ -549,6 +564,7 @@ jQuery.fn.extend( {
 			for ( index = timers.length; index--; ) {
 				if ( timers[ index ].elem === this &&
 					( type == null || timers[ index ].queue === type ) ) {
+
 					timers[ index ].anim.stop( gotoEnd );
 					dequeue = false;
 					timers.splice( index, 1 );

@@ -1,7 +1,7 @@
-define([
+define( [
 	"./fnToString"
-], function (fnToString) {
-    "use strict";
+], function( fnToString ) {
+	"use strict";
 
-    return fnToString.call(Object);
-});
+	return fnToString.call( Object );
+} );

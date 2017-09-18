@@ -1,7 +1,7 @@
-define([
+define( [
 	"./arr"
-], function (arr) {
-    "use strict";
+], function( arr ) {
+	"use strict";
 
-    return arr.concat;
-});
+	return arr.concat;
+} );
