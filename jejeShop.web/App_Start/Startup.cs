@@ -6,7 +6,6 @@ using jejeShop.Data.Infrastructure;
 using jejeShop.Data.Repositories;
 using jejeShop.Model.Models;
 using jejeShop.service;
-using jejeShop.Web.App_Start;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.DataProtection;
@@ -15,7 +14,6 @@ using System.Reflection;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
-using System;
 
 [assembly: OwinStartup(typeof(jejeShop.Web.App_Start.Startup))]
 
@@ -29,8 +27,6 @@ namespace jejeShop.Web.App_Start
             ConfigAutofac(app);
             ConfigureAuth(app);
         }
-
-       
 
         /*public void ConfigureAuth(IAppBuilder app)
         {

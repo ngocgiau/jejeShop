@@ -7,7 +7,6 @@ using Microsoft.Owin.Security.Cookies;
 using Owin;
 using System;
 
-
 [assembly: OwinStartup(typeof(jejeShop.Web.App_Start.Startup))]
 
 namespace jejeShop.Web.App_Start

@@ -1,7 +1,7 @@
-define( [
+define([
 	"../../core"
-], function( jQuery ) {
-	"use strict";
+], function (jQuery) {
+    "use strict";
 
-	return jQuery.now();
-} );
+    return jQuery.now();
+});

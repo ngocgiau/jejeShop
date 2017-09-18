@@ -224,7 +224,6 @@ $(function () {
       $(this).addClass("active");
       e.preventDefault();
     });
-
   });
 });
 
@@ -283,7 +282,6 @@ function _init() {
           if (controlSidebar.height() > postSetWidth)
             $(".content-wrapper, .right-side").css('min-height', controlSidebar.height());
         }
-
       }
     },
     fixSidebar: function () {
@@ -620,11 +618,9 @@ function _init() {
  * @usage $("#box-widget").boxRefresh( options );
  */
 (function ($) {
-
   "use strict";
 
   $.fn.boxRefresh = function (options) {
-
     // Render options
     var settings = $.extend({
       //Refresh button selector
@@ -638,7 +634,6 @@ function _init() {
       onLoadDone: function (box) {
         return box;
       } //When the source has been loaded
-
     }, options);
 
     //The overlay
@@ -683,9 +678,7 @@ function _init() {
 
       settings.onLoadDone.call(box);
     }
-
   };
-
 })(jQuery);
 
 /*
@@ -700,7 +693,6 @@ function _init() {
  * @usage $("#box-widget").removeBox();
  */
 (function ($) {
-
   'use strict';
 
   $.fn.activateBox = function () {
@@ -716,7 +708,6 @@ function _init() {
     var button = $($.AdminLTE.boxWidget.selectors.remove, this);
     $.AdminLTE.boxWidget.remove(button);
   };
-
 })(jQuery);
 
 /*
@@ -728,7 +719,6 @@ function _init() {
  * @usage $("#todo-widget").todolist( options );
  */
 (function ($) {
-
   'use strict';
 
   $.fn.todolist = function (options) {
@@ -745,7 +735,6 @@ function _init() {
     }, options);
 
     return this.each(function () {
-
       if (typeof $.fn.iCheck != 'undefined') {
         $('input', this).on('ifChecked', function () {
           var ele = $(this).parents("li").first();

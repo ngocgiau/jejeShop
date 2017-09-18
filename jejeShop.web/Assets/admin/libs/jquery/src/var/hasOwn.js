@@ -1,7 +1,7 @@
-define( [
+define([
 	"./class2type"
-], function( class2type ) {
-	"use strict";
+], function (class2type) {
+    "use strict";
 
-	return class2type.hasOwnProperty;
-} );
+    return class2type.hasOwnProperty;
+});

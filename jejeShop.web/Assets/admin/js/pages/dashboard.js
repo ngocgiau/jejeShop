@@ -6,7 +6,6 @@
  **/
 
 $(function () {
-
   'use strict';
 
   // Make the dashboard widgets sortable Using jquery UI
@@ -206,5 +205,4 @@ $(function () {
       window.console.log($(this), 'The element has been unchecked');
     }
   });
-
 });

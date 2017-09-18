@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace jejeShop.Web.Models
+﻿namespace jejeShop.Web.Models
 {
     public class PostTagViewModel
     {
@@ -11,6 +9,5 @@ namespace jejeShop.Web.Models
         public virtual PostViewModel Post { set; get; }
 
         public virtual TagViewModel Tag { set; get; }
-      
     }
 }

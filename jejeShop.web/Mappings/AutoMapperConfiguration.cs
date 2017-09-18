@@ -1,5 +1,4 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using jejeShop.Model.Models;
 using jejeShop.Web.Models;
 
@@ -18,11 +17,7 @@ namespace jejeShop.Web.Mappings
                 cfg.CreateMap<ProductCategory, ProductCategoryViewModel>().MaxDepth(2);
                 cfg.CreateMap<Product, ProductViewModel>().MaxDepth(2);
                 cfg.CreateMap<ProductTag, ProductTagViewModel>().MaxDepth(2);
-
-
             });
-
-
         }
     }
 }
