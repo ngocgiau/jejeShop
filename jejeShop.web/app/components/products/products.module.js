@@ -1,7 +1,9 @@
 ﻿/// <reference path="/Assets/admin/libs/angular/angular.js" />
 (function () {
-    angular.module('jejeShop.products', ['jejeShop.Common']).config(config);
+    angular.module('jejeShop.products', ['jejeShop.common']).config(config);
+
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
+
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('products', {
             url: "/products",
