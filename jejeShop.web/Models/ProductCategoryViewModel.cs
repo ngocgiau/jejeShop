@@ -8,10 +8,10 @@ namespace jejeShop.Web.Models
     {
         public int ID { set; get; }
 
-        [Required]
+        [Required(ErrorMessage = "yêu cầu nhập tên danh mục")]
         public string Name { set; get; }
 
-        [Required]
+        [Required(ErrorMessage = "yêu cầu nhập tiêu đề Seo")]
         public string Alias { set; get; }
 
         public string Description { set; get; }
@@ -37,7 +37,7 @@ namespace jejeShop.Web.Models
 
         public string MetaDescription { set; get; }
 
-        [Required]
+        [Required(ErrorMessage = "yêu cầu nhập trạng thái")]
         public bool Status { set; get; }
     }
 }

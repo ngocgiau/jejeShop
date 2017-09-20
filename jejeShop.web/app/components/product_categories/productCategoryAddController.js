@@ -6,7 +6,7 @@
     function productCategoryAddController(apiService, $scope, notificationService, $state) {
         $scope.productCategory = {
             CreatedDate: new Date(),
-            Status: true,
+            Status: true
             
         }
 
