@@ -26,9 +26,9 @@ namespace jejeShop.Model.Models
         public string Image { set; get; }
         [Column(TypeName ="xml")]
         public string MoreImages { set; get; }
-        public decimal price { set; get; }
-        public decimal? Promotionprice { set; get; }
-        public int? warranty { set; get; }
+        public decimal Price { set; get; }
+        public decimal? PromotionPrice { set; get; }
+        public int? Warranty { set; get; }
 
         [MaxLength(500)]
         public string Description { set; get; }

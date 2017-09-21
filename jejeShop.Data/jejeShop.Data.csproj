@@ -89,13 +89,13 @@
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="jejeShopDbContext.cs" />
-    <Compile Include="Migrations\201709090837156_InitialDB.cs" />
-    <Compile Include="Migrations\201709090837156_InitialDB.Designer.cs">
-      <DependentUpon>201709090837156_InitialDB.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201709101051242_Intergrate-AspnetIdentity.cs" />
     <Compile Include="Migrations\201709101051242_Intergrate-AspnetIdentity.Designer.cs">
       <DependentUpon>201709101051242_Intergrate-AspnetIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709210811151_InitialDB1.cs" />
+    <Compile Include="Migrations\201709210811151_InitialDB1.Designer.cs">
+      <DependentUpon>201709210811151_InitialDB1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,11 +135,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709090837156_InitialDB.resx">
-      <DependentUpon>201709090837156_InitialDB.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709101051242_Intergrate-AspnetIdentity.resx">
       <DependentUpon>201709101051242_Intergrate-AspnetIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709210811151_InitialDB1.resx">
+      <DependentUpon>201709210811151_InitialDB1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
