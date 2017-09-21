@@ -9,6 +9,10 @@
             Status: true
 
         }
+        $scope.ckeditorOptions = {
+            languague: 'vi',
+            height: '200px'
+        }
 
         $scope.AddProduct = AddProduct;
 
