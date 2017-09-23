@@ -1,13 +1,18 @@
 ﻿(function (app) {
     app.controller('productAddController', productAddController);
 
-    productAddController.$inject = ['apiService', '$scope', 'notificationService', '$state'];
+    productAddController.$inject = ['apiService', '$scope', 'notificationService', '$state', 'commonService'];
 
-    function productAddController(apiService, $scope, notificationService, $state) {
+    function productAddController(apiService, $scope, notificationService, $state, commonService) {
         $scope.product = {
             CreatedDate: new Date(),
             Status: true
 
+        }
+        $scope.getSeoTitle = getSeoTitle;
+
+        function getSeoTitle() {
+            $scope.product.Alias = commonService.getSeoTitle($scope.product.Name);
         }
         $scope.ckeditorOptions = {
             languague: 'vi',
@@ -22,7 +27,7 @@
                     notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
                     $state.go('products');
                 }, function (error) {
-                    notificationService.displayError('Thêm mới không thành công.');
+                    notificationService.displayError('Thêm mới không thành công!');
                 });
         }
         function loadProductCategory() {

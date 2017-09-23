@@ -26,7 +26,6 @@ namespace jejeShop.web.Api
         {
             this._productService = productService;
         }
-
         #endregion
 
         [Route("getallparents")]
