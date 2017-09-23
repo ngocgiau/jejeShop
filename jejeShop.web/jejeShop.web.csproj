@@ -4235,6 +4235,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Libs\CKFinder.dll" />
+    <Content Include="UploadedFiles\files\20597545_10155787582939903_4947355497328520891_n.jpg" />
+    <Content Include="UploadedFiles\files\20621173_10155787582609903_2560849714936620768_n.jpg" />
+    <Content Include="UploadedFiles\files\20622066_10155787582674903_6977931037837161662_n.jpg" />
+    <Content Include="UploadedFiles\files\20622140_10155787582669903_2621497132745009446_n.jpg" />
+    <Content Include="UploadedFiles\files\20622256_10155787582599903_2040799645085756674_n.jpg" />
+    <Content Include="UploadedFiles\files\20638082_10155787582779903_6314955403856153134_n.jpg" />
+    <Content Include="UploadedFiles\files\20638182_10155787582869903_8797606972519172137_n.jpg" />
+    <Content Include="UploadedFiles\files\20638894_10155787582799903_8046090943349414476_n.jpg" />
+    <Content Include="UploadedFiles\files\20638947_10155787582594903_8703199446892078571_n.jpg" />
+    <Content Include="UploadedFiles\files\20664123_10155787583019903_8128802143267222490_n.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\20597545_10155787582939903_4947355497328520891_n.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\20621173_10155787582609903_2560849714936620768_n.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\20622066_10155787582674903_6977931037837161662_n.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\20622140_10155787582669903_2621497132745009446_n.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\20622256_10155787582599903_2040799645085756674_n.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\20638082_10155787582779903_6314955403856153134_n.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\20638182_10155787582869903_8797606972519172137_n.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\20638894_10155787582799903_8046090943349414476_n.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\20638947_10155787582594903_8703199446892078571_n.jpg" />
+    <Content Include="UploadedFiles\_thumbs\Files\20664123_10155787583019903_8128802143267222490_n.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -4253,7 +4273,8 @@
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
     <Folder Include="Assets\client\" />
-    <Folder Include="UploadedFiles\" />
+    <Folder Include="UploadedFiles\flash\" />
+    <Folder Include="UploadedFiles\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
