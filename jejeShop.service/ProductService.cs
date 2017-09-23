@@ -31,7 +31,7 @@ namespace jejeShop.service
 
         private IUnitOfWork _unitOfWork;
 
-        public ProductService(IProductRepository productRepository, IProductTagRepository productTagRepository,ITagRepository tagRepository, IUnitOfWork unitOfWork)
+        public ProductService(IProductRepository productRepository, IProductTagRepository productTagRepository,ITagRepository _tagRepository, IUnitOfWork unitOfWork)
         {
             this._productRepository = productRepository;
             this._productTagRepository = productTagRepository;
