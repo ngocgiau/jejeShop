@@ -16,6 +16,7 @@ using System.Web.Script.Serialization;
 namespace jejeShop.web.Api
 {
     [RoutePrefix("api/product")]
+    [Authorize]
     public class ProductController : ApiControllerBase
     {
         #region Initialize
@@ -102,6 +103,7 @@ namespace jejeShop.web.Api
                     var newProduct = new Product();
                     newProduct.UpdateProduct(productCategoryVm);
                     newProduct.CreatedDate = DateTime.Now;
+                    newProduct.CreatedBy = User.Identity.Name;
                     _productService.Add(newProduct);
                     _productService.Save();
 
@@ -131,6 +133,7 @@ namespace jejeShop.web.Api
 
                     dbProduct.UpdateProduct(productVm);
                     dbProduct.UpdatedDate = DateTime.Now;
+                    dbProduct.UpdatedBy = User.Identity.Name;
 
                     _productService.Update(dbProduct);
                     _productService.Save();

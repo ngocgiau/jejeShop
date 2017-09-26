@@ -17,6 +17,7 @@ using System.Web.Script.Serialization;
 namespace jejeShop.web.Api
 {
     [RoutePrefix("api/productcategory")]
+    [Authorize]
     public class ProductCategoryController : ApiControllerBase
     {
         #region Initialize
