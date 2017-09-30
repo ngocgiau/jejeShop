@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using jejeShop.Model.Models;
-using jejeShop.Web.Models;
 
+using jejeShop.Web.Models;
 
 namespace jejeShop.Web.Mappings
 {
@@ -20,6 +20,8 @@ namespace jejeShop.Web.Mappings
                 cfg.CreateMap<ProductTag, ProductTagViewModel>().MaxDepth(2);
 
                 cfg.CreateMap<Footer, FooterViewModel>().MaxDepth(2);
+
+                cfg.CreateMap<Slide, SlideViewModel>().MaxDepth(2);
             });
         }
     }

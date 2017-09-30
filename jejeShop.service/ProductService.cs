@@ -2,7 +2,9 @@
 using jejeShop.Data.Infrastructure;
 using jejeShop.Data.Repositories;
 using jejeShop.Model.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace jejeShop.service
 {
@@ -18,6 +20,10 @@ namespace jejeShop.service
 
         IEnumerable<Product> GetAll(string keyword);
 
+        IEnumerable<Product> GetLastest(int top);
+
+        IEnumerable<Product> GetHotProduct(int top);
+
         Product GetById(int id);
 
         void Save();
@@ -31,12 +37,12 @@ namespace jejeShop.service
 
         private IUnitOfWork _unitOfWork;
 
-        public ProductService(IProductRepository productRepository, IProductTagRepository productTagRepository,ITagRepository _tagRepository, IUnitOfWork unitOfWork)
+        public ProductService(IProductRepository productRepository, IProductTagRepository productTagRepository, ITagRepository _tagRepository, IUnitOfWork unitOfWork)
         {
             this._productRepository = productRepository;
             this._productTagRepository = productTagRepository;
             this._tagRepository = _tagRepository;
-        
+
             this._unitOfWork = unitOfWork;
         }
 
@@ -119,8 +125,17 @@ namespace jejeShop.service
                     productTag.TagID = tagId;
                     _productTagRepository.Add(productTag);
                 }
-
             }
+        }
+
+        public IEnumerable<Product> GetLastest(int top)
+        {
+            return _productRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(top);
+        }
+
+        public IEnumerable<Product> GetHotProduct(int hot)
+        {
+            return _productRepository.GetMulti(x => x.Status && x.HotFlag==true).OrderByDescending(x => x.CreatedDate).Take(hot);
         }
     }
 }

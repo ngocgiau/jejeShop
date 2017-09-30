@@ -17,7 +17,7 @@ namespace jejeShop.Model.Models
 
         [Required]
         [MaxLength(500)]
-        public string URL { set; get; }
+        public string Url { set; get; }
 
         public int? DisplayOrder { set; get; }
 
@@ -27,5 +27,6 @@ namespace jejeShop.Model.Models
         [MaxLength(500)]
         public string Description { set; get; }
         public bool Status { set; get; }
+        public string Content { set; get; }
     }
 }
