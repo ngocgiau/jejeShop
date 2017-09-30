@@ -1,8 +1,8 @@
-﻿using jejeShop.service;
+﻿using jejeShop.Service;
 using jejeShop.Web.Infrastructure.Core;
 using System.Web.Http;
 
-namespace jejeShop.web.Api
+namespace jejeShop.Web.Api
 {
     [RoutePrefix("api/home")]
     [Authorize]

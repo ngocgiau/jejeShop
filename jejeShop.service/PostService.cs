@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace jejeShop.service
+namespace jejeShop.Service
 {
     public interface IPostService
     {

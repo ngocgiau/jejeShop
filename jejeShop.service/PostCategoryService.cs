@@ -4,7 +4,7 @@ using jejeShop.Model.Models;
 using System.Collections.Generic;
 using System;
 
-namespace jejeShop.service
+namespace jejeShop.Service
 {
     public interface IPostCategoryService
     {

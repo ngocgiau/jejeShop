@@ -1,7 +1,7 @@
 ﻿using jejeShop.Data.Infrastructure;
 using jejeShop.Data.Repositories;
 using jejeShop.Model.Models;
-using jejeShop.service;
+using jejeShop.Service;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;

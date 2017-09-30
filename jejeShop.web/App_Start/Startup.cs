@@ -5,7 +5,7 @@ using jejeShop.Data;
 using jejeShop.Data.Infrastructure;
 using jejeShop.Data.Repositories;
 using jejeShop.Model.Models;
-using jejeShop.service;
+using jejeShop.Service;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.DataProtection;

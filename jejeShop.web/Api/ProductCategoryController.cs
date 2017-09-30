@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using jejeShop.Model.Models;
-using jejeShop.service;
 using jejeShop.Service;
-using jejeShop.web.Infrastructure.Core;
+
 using jejeShop.Web.Infrastructure.Core;
+
 using jejeShop.Web.Infrastructure.Extensions;
 using jejeShop.Web.Models;
 using System;

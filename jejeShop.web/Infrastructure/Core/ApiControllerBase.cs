@@ -1,5 +1,5 @@
 ﻿using jejeShop.Model.Models;
-using jejeShop.service;
+using jejeShop.Service;
 using System;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;

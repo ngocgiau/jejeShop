@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace jejeShop.web.Infrastructure.Core
+namespace jejeShop.Web.Infrastructure.Core
 {
     public class PaginationSet<T>
     {
@@ -17,6 +17,7 @@ namespace jejeShop.web.Infrastructure.Core
 
         public int TotalPages { set; get; }
         public int TotalCount { set; get; }
+        public int MaxPage { set; get; }
         public IEnumerable<T> Items { set; get; }
     }
 }
