@@ -19,7 +19,7 @@ namespace jejeShop.web.Api
         [Route("TestMethod")]
         public string TestMethod()
         {
-            return "Hello, welcome to jejeShop ";
+            return "hello, welcome to jejeshop. ";
         }
     }
 }
