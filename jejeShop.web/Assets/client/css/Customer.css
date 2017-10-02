@@ -1,0 +1,7 @@
+﻿.Tag{
+    display:block;
+}
+.TagList li{
+
+    float:left;
+}

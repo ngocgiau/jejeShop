@@ -41,12 +41,18 @@ namespace jejeShop.Web
            defaults: new { controller = "Product", action = "Detail", productId = UrlParameter.Optional },
            namespaces: new string[] { "jejeShop.Web.Controllers" }
        );
-
+                        
            routes.MapRoute(
-           name: "Default",
-           url: "{controller}/{action}/{id}",
-           defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+           name: "TagList",
+           url: "tag/{tagId}.html",
+           defaults: new { controller = "Product", action = "ListByTag", tagId = UrlParameter.Optional },
            namespaces: new string[] { "jejeShop.Web.Controllers" }
+       );
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                  namespaces: new string[] { "TeduShop.Web.Controllers" }
             );
         }
     }

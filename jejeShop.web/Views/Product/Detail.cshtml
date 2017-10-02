@@ -101,6 +101,17 @@
 
             <h6>Chỉ còn @Model.Quantity sản phẩm thôi nè</h6>
             <p>@Model.Description</p>
+            <div class="tag">
+                <h5>Tag :</h5>
+                <ul class="tagList">
+                    @foreach (var tag in (IEnumerable<jejeShop.Web.Models.TagViewModel>)ViewBag.Tags)
+                    {
+                        <li><a href="/tag/@(tag.ID).html">@(tag.Name), </a></li>
+                    }
+
+                </ul>
+            </div>
+            <div class="clearfix"></div>
             <div class="share">
                 <h5>Chia sẻ :</h5>
                 <ul class="share_nav">
