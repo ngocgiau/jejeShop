@@ -29,6 +29,7 @@ namespace jejeShop.Service
         IEnumerable<Product> Search(String keyword, int page, int pageSize, string sort, out int totalRow);
 
         IEnumerable<string> GetListProductByName(string name);
+        IEnumerable<Product> GetReatedProducts(int id ,int top);
         Product GetById(int id);
 
         void Save();
@@ -196,6 +197,12 @@ namespace jejeShop.Service
             totalRow = query.Count();
 
             return query.Skip((page - 1) * pageSize).Take(pageSize);
+        }
+
+        public IEnumerable<Product> GetReatedProducts(int id, int top)
+        {
+            var product = _productRepository.GetSingleById(id);
+            return _productRepository.GetMulti(x => x.Status && x.ID != id && x.CategoryID == product.CategoryID).OrderByDescending(x => x.CreatedDate).Take(top);
         }
     }
 }
