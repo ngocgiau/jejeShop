@@ -9,6 +9,7 @@ namespace jejeShop.Data.Repositories
     public class PageRepository : RepositoryBase<Page>, IpageRepository
     {
         public PageRepository(IDbFactory dbFactory) : base(dbFactory)
-        { }
+        {
+        }
     }
 }
