@@ -8,6 +8,8 @@
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Data.Entity.Validation;
+    using System.Diagnostics;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<jejeShop.Data.jejeShopDbContext>
@@ -21,6 +23,7 @@
         {
             CreateProductCategorySample(context);
             CreateSlide(context);
+            CreateContactDetail(context);
             //  This method will be called after migrating to the latest version.
 
         }
@@ -107,6 +110,42 @@
                 };
                 context.Slides.AddRange(listSlide);
                 context.SaveChanges();
+            }
+        }
+        private void CreateContactDetail(jejeShopDbContext context)
+        {
+            if (context.ContactDetails.Count() == 0)
+            {
+                try
+                {
+                    var contactDetail = new jejeShop.Model.Models.ContactDetail()
+                    {
+                        Name = "jejeShop ",
+                        Address = "649/27A điện biên phủ, phường 25, Bình thạnh",
+                        Email = "Huynh.ngocgiau021993@gmail.com",
+                        Lat = 10.8001856,
+                        Lng = 106.7201961,
+                        Phone = "0169 35 65 955",
+                        Website = "http://jejeShop.com.vn",
+                        Other = "",
+                        Status = true
+
+                    };
+                    context.ContactDetails.Add(contactDetail);
+                    context.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var eve in ex.EntityValidationErrors)
+                    {
+                        Trace.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation error.");
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            Trace.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
+                        }
+                    }
+                }
+
             }
         }
     }

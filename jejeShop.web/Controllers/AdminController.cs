@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace jejeShop.web.Controllers
+namespace jejeShop.Web.Controllers
 {
     public class AdminController : Controller
     {

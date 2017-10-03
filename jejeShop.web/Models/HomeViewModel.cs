@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace jejeShop.web.Models
+namespace jejeShop.Web.Models
 {
     public class HomeViewModel
     {

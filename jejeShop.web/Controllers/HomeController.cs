@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using jejeShop.Model.Models;
 using jejeShop.Service;
-using jejeShop.web.Models;
+using jejeShop.Web.Models;
 using jejeShop.Web.Models;
 using System.Collections.Generic;
 using System.Web.Mvc;

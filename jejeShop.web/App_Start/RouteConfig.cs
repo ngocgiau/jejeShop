@@ -16,7 +16,13 @@ namespace jejeShop.Web
            defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },
            namespaces: new string[] { "jejeShop.Web.Controllers" }
        );
-           routes.MapRoute(
+            routes.MapRoute(
+           name: "ContactDetail",
+           url: "lien-he.html",
+           defaults: new { controller = "ContactDetail", action = "Index", id = UrlParameter.Optional },
+           namespaces: new string[] { "jejeShop.Web.Controllers" }
+       );
+            routes.MapRoute(
            name: "Search",
            url: "tim-kiem.html",
            defaults: new { controller = "Product", action = "Search", id = UrlParameter.Optional },

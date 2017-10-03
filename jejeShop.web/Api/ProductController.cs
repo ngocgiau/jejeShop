@@ -13,7 +13,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Script.Serialization;
 
-namespace jejeShop.web.Api
+namespace jejeShop.Web.Api
 {
     [RoutePrefix("api/product")]
     [Authorize]
