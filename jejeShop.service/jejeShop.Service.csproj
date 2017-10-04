@@ -7,8 +7,8 @@
     <ProjectGuid>{30D20FC2-6518-430F-98A0-8796BA354568}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>jejeShop.service</RootNamespace>
-    <AssemblyName>jejeShop.service</AssemblyName>
+    <RootNamespace>jejeShop.Service</RootNamespace>
+    <AssemblyName>jejeShop.Service</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,6 +43,7 @@
     <Compile Include="ContactDetailService.cs" />
     <Compile Include="ErrorService.cs" />
     <Compile Include="CommonService.cs" />
+    <Compile Include="FeedbackService.cs" />
     <Compile Include="PageService.cs" />
     <Compile Include="PostCategoryService.cs" />
     <Compile Include="PostService.cs" />
