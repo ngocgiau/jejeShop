@@ -18,6 +18,13 @@ namespace jejeShop.Web
            defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },
            namespaces: new string[] { "jejeShop.Web.Controllers" }
        );
+
+            routes.MapRoute(
+           name: "Register",
+           url: "dang-ky.html",
+           defaults: new { controller = "Account", action = "Register", id = UrlParameter.Optional },
+           namespaces: new string[] { "jejeShop.Web.Controllers" }
+       );
             routes.MapRoute(
            name: "ContactDetail",
            url: "lien-he.html",
