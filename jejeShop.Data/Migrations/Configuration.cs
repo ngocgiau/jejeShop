@@ -1,6 +1,6 @@
 ﻿namespace jejeShop.Data.Migrations
 {
-    using common;
+    using Common;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Model.Models;

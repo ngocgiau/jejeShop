@@ -1,4 +1,5 @@
-﻿<div class="header">
+﻿@using Microsoft.AspNet.Identity;
+<div class="header">
     <div class="top-header">
         <div class="container">
             <div class="top-header-left">
@@ -58,13 +59,27 @@
                 <div class="clearfix"> </div>
             </div>
             <div class="header-bottom-right">
-                <div class="account"><a href="login.html"><span> </span>Tài khoản</a></div>
-                <ul class="login">
-                    <li><a href="/dang-nhap.html"><span> </span>Đăng Nhập</a></li> |
-                    <li><a href="/dang-ky.html">Đăng ký</a></li>
-                </ul>
-                <div class="cart"><a href="/gio-hang.html"><span> </span>Giỏ Hàng</a></div>
-                <div class="clearfix"> </div>
+              @using (Html.BeginForm("LogOut", "Account", FormMethod.Post , new { @id = "frmlogout" }))
+              {
+                  if (Request.IsAuthenticated)
+                  {
+                    @Html.AntiForgeryToken()
+                    <ul class="login">
+                        <li><a href="/tai-khoan.html"><span> </span>Xin chào: @User.Identity.GetUserName()</a></li> |
+                        <li><a href="#" id="btnLogout">Thoát</a></li>
+                        @*<li><button type="submit">Thoát</button></li>*@
+                    </ul>
+                  }
+                  else
+                  {
+                    <ul class="login">
+                        <li><a href="/dang-nhap.html"><span> </span>Đăng Nhập</a></li> |
+                        <li><a href="/dang-ky.html">Đăng ký</a></li>
+                    </ul>              
+                  }
+              }
+               <div class="cart"><a href="/gio-hang.html"><span> </span>Giỏ Hàng</a></div>
+               <div class="clearfix"> </div>
             </div>
             <div class="clearfix"> </div>
         </div>

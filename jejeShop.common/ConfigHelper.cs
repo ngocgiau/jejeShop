@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace jejeShop.common
+namespace jejeShop.Common
 {
     public class ConfigHelper
     {

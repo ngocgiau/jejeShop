@@ -1,4 +1,4 @@
-﻿using jejeShop.common;
+﻿using jejeShop.Common;
 using jejeShop.Data.Infrastructure;
 using jejeShop.Data.Repositories;
 using jejeShop.Model.Models;

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using jejeShop.common;
+using jejeShop.Common;
 using jejeShop.Model.Models;
 using jejeShop.Service;
 using jejeShop.Web.Infrastructure.Core;

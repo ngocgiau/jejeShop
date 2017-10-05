@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BotDetect.Web.Mvc;
-using jejeShop.common;
+using jejeShop.Common;
 using jejeShop.Model.Models;
 using jejeShop.Service;
 using jejeShop.Web.Infrastructure.Extensions;

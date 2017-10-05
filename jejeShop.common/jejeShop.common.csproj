@@ -7,8 +7,8 @@
     <ProjectGuid>{DF8E9E91-F131-4ACB-87BC-BB456EE31387}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>jejeShop.common</RootNamespace>
-    <AssemblyName>jejeShop.common</AssemblyName>
+    <RootNamespace>jejeShop.Common</RootNamespace>
+    <AssemblyName>jejeShop.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
