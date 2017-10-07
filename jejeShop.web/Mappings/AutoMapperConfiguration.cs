@@ -29,6 +29,9 @@ namespace jejeShop.Web.Mappings
                 cfg.CreateMap<Page, PageViewModel>().MaxDepth(2);
 
                 cfg.CreateMap<Feedback, FeedbackViewModel>().MaxDepth(2);
+
+                cfg.CreateMap<Order, OrderViewModel>().MaxDepth(2);
+                cfg.CreateMap<OrderDetail, OrderDetailViewModel>().MaxDepth(2);
             });
         }
     }

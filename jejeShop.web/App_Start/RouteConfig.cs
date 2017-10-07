@@ -30,11 +30,17 @@ namespace jejeShop.Web
            defaults: new { controller = "ContactDetail", action = "Index", id = UrlParameter.Optional },
            namespaces: new string[] { "jejeShop.Web.Controllers" }
        ); routes.MapRoute(
-           name: "ShoppingCart",
+           name: "cart",
            url: "gio-hang.html",
            defaults: new { controller = "ShoppingCart", action = "Index", id = UrlParameter.Optional },
            namespaces: new string[] { "jejeShop.Web.Controllers" }
        );
+            routes.MapRoute(
+            name: "CheckOut",
+            url: "thanh-toan.html",
+            defaults: new { controller = "ShoppingCart", action = "CheckOut", id = UrlParameter.Optional },
+            namespaces: new string[] { "jejeShop.Web.Controllers" }
+        );
             routes.MapRoute(
            name: "Search",
            url: "tim-kiem.html",

@@ -3,13 +3,16 @@ using jejeShop.Model.Models;
 
 namespace jejeShop.Data.Repositories
 {
-    public interface IOrderDetailReposirory : IRepository<OrderDetail>
+    public interface IOrderDetailRepository : IRepository<OrderDetail>
     {
     }
 
-    public class OrderDetailRepository : RepositoryBase<OrderDetail>, IOrderDetailReposirory
+    public class OrderDetailRepository : RepositoryBase<OrderDetail>, IOrderDetailRepository
     {
         public OrderDetailRepository(IDbFactory dbFactory) : base(dbFactory)
-         { }
+        {
+        }
     }
+
+
 }

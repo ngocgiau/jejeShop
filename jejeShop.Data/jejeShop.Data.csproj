@@ -129,6 +129,14 @@
     <Compile Include="Migrations\201710040455294_addFeedback.Designer.cs">
       <DependentUpon>201710040455294_addFeedback.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710070810219_AddCustomerID.cs" />
+    <Compile Include="Migrations\201710070810219_AddCustomerID.Designer.cs">
+      <DependentUpon>201710070810219_AddCustomerID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710071223244_AddUpdateOrderDetail.cs" />
+    <Compile Include="Migrations\201710071223244_AddUpdateOrderDetail.Designer.cs">
+      <DependentUpon>201710071223244_AddUpdateOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ContactDetailRepository.cs" />
@@ -198,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710040455294_addFeedback.resx">
       <DependentUpon>201710040455294_addFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710070810219_AddCustomerID.resx">
+      <DependentUpon>201710070810219_AddCustomerID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710071223244_AddUpdateOrderDetail.resx">
+      <DependentUpon>201710071223244_AddUpdateOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
