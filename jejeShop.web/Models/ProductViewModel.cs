@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace jejeShop.Web.Models
 {
+    [Serializable]
     public class ProductViewModel
     {
         public int ID { set; get; }
