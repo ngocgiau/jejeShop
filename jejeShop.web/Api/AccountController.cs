@@ -9,7 +9,6 @@ using System.Web.Http;
 namespace jejeShop.Web.Api
 {
     [RoutePrefix("api/account")]
-    
     public class AccountController : ApiController
     {
         private ApplicationSignInManager _signInManager;
@@ -65,6 +64,18 @@ namespace jejeShop.Web.Api
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(userName, password, rememberMe, shouldLockout: false);
             return request.CreateResponse(HttpStatusCode.OK, result);
+        }
+
+        //
+        // POST: /Account/Logout
+        [HttpPost]
+        [Authorize]
+        [Route("logout")]
+        public HttpResponseMessage Logout(HttpRequestMessage request)
+        {
+            var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+            authenticationManager.SignOut();
+            return request.CreateResponse(HttpStatusCode.OK, new { success = true });
         }
     }
 }

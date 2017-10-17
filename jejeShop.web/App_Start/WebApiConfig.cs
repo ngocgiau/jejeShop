@@ -1,4 +1,5 @@
 ﻿using Microsoft.Owin.Security.OAuth;
+using Newtonsoft.Json.Serialization;
 using System.Web.Http;
 
 namespace jejeShop.Web
@@ -12,6 +13,9 @@ namespace jejeShop.Web
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+           new DefaultContractResolver { IgnoreSerializableAttribute = true };
 
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
