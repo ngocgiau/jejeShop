@@ -1,6 +1,7 @@
 // Karma configuration file
 var karma = require("karma");
-var DEFAULT_NG_VERSION = "1.5";
+var ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+var DEFAULT_NG_VERSION = "1.6";
 
 /**
  * This returns a Karma 'files configuration'.
@@ -12,74 +13,93 @@ var DEFAULT_NG_VERSION = "1.5";
  * included: false -- files *available to be served* by karma, for instance via require()
  */
 function karmaServedFiles(ngVersion) {
-    // Returns necessary files for a specific version of angular
-    function angular(version) {
-        console.log('Using Angular ' + ngVersion + ' from test/angular/' + version + '/angular.js');
+  // Returns necessary files for a specific version of angular
+  function angular(version) {
+    console.log('Using Angular ' + ngVersion + ' from test/angular/' + version + '/angular.js');
 
-        return [
-          'test/angular/' + version + '/angular.js',
-          'test/angular/' + version + '/angular-mocks.js',
-          'test/angular/' + version + '/angular-animate.js',
-        ];
-    }
+    return [
+      'test/angular/' + version + '/angular.js',
+      'test/angular/' + version + '/angular-mocks.js',
+      'test/angular/' + version + '/angular-animate.js',
+    ];
+  }
 
-    var angularFiles = angular(ngVersion).map(function (pattern) {
-        return { watched: false, included: true, nocache: true, pattern: pattern };
-    });
+  var angularFiles = angular(ngVersion).map(function (pattern) {
+    return { watched: false, included: true, nocache: true, pattern: pattern };
+  });
 
-    return angularFiles.concat('test/index.js');
+  return angularFiles.concat('test/index.js');
 }
 
-var webpackConfig = require('./webpack.config.js');
-webpackConfig.entry = {};
-webpackConfig.plugins = [];
-webpackConfig.devtool = 'inline-source-map';
+var webpackConfig = module.exports = {
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+  },
 
-module.exports = function (config) {
-    var ngVersion = config.ngversion || DEFAULT_NG_VERSION;
+  devtool: 'inline-source-map',
 
-    config.set({
-        singleRun: true,
-        autoWatch: false,
-        autoWatchInterval: 0,
+  module: {
+    rules: [
+      { test: /\.tsx?$/, loader: 'ts-loader', options: { transpileOnly: true } }
+    ]
+  },
 
-        // level of logging
-        // possible values: LOG_DISABLE, LOG_ERROR, LOG_WARN, LOG_INFO, LOG_DEBUG
-        logLevel: "warn",
-        // possible values: 'dots', 'progress'
-        reporters: 'dots',
-        colors: true,
+  stats: false,
 
-        port: 8080,
+  plugins: [
+    new ForkTsCheckerWebpackPlugin(),
+  ],
 
-        // base path, that will be used to resolve files and exclude
-        basePath: '.',
+  externals: [ 'angular' ]
+};
 
-        // Start these browsers, currently available:
-        // Chrome, ChromeCanary, Firefox, Opera, Safari, PhantomJS
-        browsers: ['PhantomJS'],
+module.exports = function(config) {
+  var ngVersion = config.ngversion || DEFAULT_NG_VERSION;
 
-        frameworks: ['jasmine'],
+  config.set({
+    singleRun: true,
+    autoWatch: false,
+    autoWatchInterval: 0,
 
-        plugins: [
-          require('karma-webpack'),
-          require('karma-sourcemap-loader'),
-          require('karma-jasmine'),
-          require('karma-phantomjs-launcher'),
-          require('karma-chrome-launcher')
-        ],
+    // level of logging
+    // possible values: LOG_DISABLE, LOG_ERROR, LOG_WARN, LOG_INFO, LOG_DEBUG
+    logLevel: "warn",
+    // possible values: 'dots', 'progress'
+    reporters: 'dots',
+    colors: true,
 
-        webpack: webpackConfig,
-        webpackMiddleware: {
-            stats: { chunks: false },
-        },
+    port: 8080,
 
-        /* Files *available to be served* by karma, i.e., anything that will be require()'d */
-        files: karmaServedFiles(ngVersion),
+    // base path, that will be used to resolve files and exclude
+    basePath: '.',
 
-        preprocessors: {
-            'test/index.js': ['webpack', 'sourcemap'],
-            '../src/ng1': ['webpack', 'sourcemap'],
-        },
-    });
+    // Start these browsers, currently available:
+    // Chrome, ChromeCanary, Firefox, Opera, Safari, PhantomJS
+    browsers: ['PhantomJS'],
+
+    frameworks: ['jasmine'],
+
+    plugins: [
+      require('karma-webpack'),
+      require('karma-sourcemap-loader'),
+      require('karma-jasmine'),
+      require('karma-phantomjs-launcher'),
+      require('karma-chrome-launcher')
+    ],
+
+    webpack: webpackConfig,
+    webpackMiddleware: {
+      stats: { chunks: false },
+    },
+
+    /* Files *available to be served* by karma, i.e., anything that will be require()'d */
+    files: karmaServedFiles(ngVersion),
+
+    preprocessors: {
+      'test/index.js': ['webpack', 'sourcemap'],
+      '../src/ng1': ['webpack', 'sourcemap'],
+    },
+
+  });
 };

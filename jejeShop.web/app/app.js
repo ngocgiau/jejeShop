@@ -4,6 +4,9 @@
     angular.module('jejeShop',
         ['jejeShop.products',
          'jejeShop.product_categories',
+         'jejeShop.application_groups',
+         'jejeShop.application_roles',
+         'jejeShop.application_users',
          'jejeShop.common'])
         .config(config)
         .config(configAuthentication);

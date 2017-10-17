@@ -32,6 +32,11 @@ namespace jejeShop.Data
         public DbSet<Error> Errors { set; get; }
         public DbSet<ContactDetail> ContactDetails { set; get; }
         public DbSet<Feedback> Feedbacks { set; get; }
+
+        public DbSet<ApplicationGroup> ApplicationGroups { set; get; }
+        public DbSet<ApplicationRole> ApplicationRoles { set; get; }
+        public DbSet<ApplicationRoleGroup> ApplicationRoleGroups { set; get; }
+        public DbSet<ApplicationUserGroup> ApplicationUserGroups { set; get; }
         public static jejeShopDbContext Create()
         {
             return new jejeShopDbContext();
@@ -39,8 +44,11 @@ namespace jejeShop.Data
 
         protected override void OnModelCreating(DbModelBuilder Builder)
         {
-            Builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
-            Builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
+         
+            Builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId }).ToTable("ApplicationUserRoles");
+            Builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId).ToTable("ApplicationUserLogins");
+            Builder.Entity<IdentityRole>().ToTable("ApplicationRoles");
+            Builder.Entity<IdentityUserClaim>().HasKey(i => i.UserId).ToTable("ApplicationUserClaims");
         }
     }
 }

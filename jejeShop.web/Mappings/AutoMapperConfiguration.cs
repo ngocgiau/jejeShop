@@ -32,6 +32,10 @@ namespace jejeShop.Web.Mappings
 
                 cfg.CreateMap<Order, OrderViewModel>().MaxDepth(2);
                 cfg.CreateMap<OrderDetail, OrderDetailViewModel>().MaxDepth(2);
+
+                cfg.CreateMap<ApplicationGroup, ApplicationGroupViewModel>().MaxDepth(2);
+                cfg.CreateMap<ApplicationRole, ApplicationRoleViewModel>().MaxDepth(2);
+                cfg.CreateMap<ApplicationUser, ApplicationUserViewModel>().MaxDepth(2);
             });
         }
     }

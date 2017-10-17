@@ -26,7 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -207,6 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
+    <Compile Include="Api\ApplicationGroupController.cs" />
+    <Compile Include="Api\ApplicationRoleController.cs" />
+    <Compile Include="Api\ApplicationUserController.cs" />
     <Compile Include="Api\HomeController.cs" />
     <Compile Include="Api\PostCategoryController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
@@ -236,6 +239,9 @@
     <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\ApplicationGroupViewModel.cs" />
+    <Compile Include="Models\ApplicationRoleViewModel.cs" />
+    <Compile Include="Models\ApplicationUserViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\OrderDetailViewModel.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
@@ -258,6 +264,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\components\application_groups\applicationGroupAddController.js" />
+    <Content Include="app\components\application_groups\applicationGroupAddView.html" />
+    <Content Include="app\components\application_groups\applicationGroupEditController.js" />
+    <Content Include="app\components\application_groups\applicationGroupEditView.html" />
+    <Content Include="app\components\application_groups\applicationGroupListController.js" />
+    <Content Include="app\components\application_groups\applicationGroupListView.html" />
+    <Content Include="app\components\application_groups\applicationGroups.module.js" />
+    <Content Include="app\components\application_roles\applicationRoleAddController.js" />
+    <Content Include="app\components\application_roles\applicationRoleAddView.html" />
+    <Content Include="app\components\application_roles\applicationRoleEditController.js" />
+    <Content Include="app\components\application_roles\applicationRoleEditView.html" />
+    <Content Include="app\components\application_roles\applicationRoleListController.js" />
+    <Content Include="app\components\application_roles\applicationRoleListView.html" />
+    <Content Include="app\components\application_roles\applicationRoles.module.js" />
+    <Content Include="app\components\application_users\applicationUserAddController.js" />
+    <Content Include="app\components\application_users\applicationUserAddView.html" />
+    <Content Include="app\components\application_users\applicationUserEditController.js" />
+    <Content Include="app\components\application_users\applicationUserEditView.html" />
+    <Content Include="app\components\application_users\applicationUserListController.js" />
+    <Content Include="app\components\application_users\applicationUserListView.html" />
+    <Content Include="app\components\application_users\applicationUsers.module.js" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
     <Content Include="app\components\home\rootController.js" />
@@ -277,6 +304,7 @@
     <Content Include="app\components\product_categories\productCategoryEditController.js" />
     <Content Include="app\components\product_categories\productCategoryListController.js" />
     <Content Include="app\components\product_categories\productCategoryListView.html" />
+    <Content Include="app\shared\directives\asDateDirective.js" />
     <Content Include="app\shared\directives\pagerDirective.html" />
     <Content Include="app\shared\directives\pagerDirective.js" />
     <Content Include="app\shared\filters\statusFilter.js" />
@@ -1760,6 +1788,8 @@
     <Content Include="Assets\admin\libs\bootstrap\js\tooltip.js" />
     <Content Include="Assets\admin\libs\bootstrap\js\transition.js" />
     <Content Include="Assets\admin\libs\bootstrap\package.js" />
+    <Content Include="Assets\admin\libs\checklist-model\checklist-model.js" />
+    <Content Include="Assets\admin\libs\checklist-model\LICENSE.txt" />
     <Content Include="Assets\admin\libs\ckeditor\adapters\jquery.js" />
     <Content Include="Assets\admin\libs\ckeditor\ckeditor.js" />
     <Content Include="Assets\admin\libs\ckeditor\config.js" />
@@ -5219,6 +5249,7 @@
     <Content Include="Assets\client\images\facebook.png" />
     <Content Include="Assets\client\images\gpluse.png" />
     <Content Include="Assets\client\images\img-sprite.png" />
+    <Content Include="Assets\client\images\jejeShop.png" />
     <Content Include="Assets\client\images\label_new.png" />
     <Content Include="Assets\client\images\logo.png" />
     <Content Include="Assets\client\images\pi.jpg" />
@@ -5305,6 +5336,7 @@
     <Folder Include="app\components\users\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
+    <Folder Include="Assets\admin\libs\checklist-model\test\" />
     <Folder Include="UploadedFiles\flash\" />
     <Folder Include="UploadedFiles\images\" />
     <Folder Include="Views\About\" />
@@ -5401,26 +5433,6 @@
     <Content Include="Assets\admin\Ionicons\scss\_ionicons-variables.scss" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\admin\libs\angular-ui-router\.bower.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\artifacts.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\bower.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\CHANGELOG.md" />
-    <Content Include="Assets\admin\libs\angular-ui-router\CONTRIBUTING.md" />
-    <Content Include="Assets\admin\libs\angular-ui-router\DOCS.md" />
-    <Content Include="Assets\admin\libs\angular-ui-router\ISSUE_TEMPLATE.md" />
-    <Content Include="Assets\admin\libs\angular-ui-router\LICENSE" />
-    <Content Include="Assets\admin\libs\angular-ui-router\migrate\migrate.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\README.md" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\tslint.json" />
-    <Content Include="Assets\admin\libs\angular-ui-router\yarn.lock" />
     <Content Include="Assets\admin\libs\bootstrap\.bower.json" />
     <Content Include="Assets\admin\libs\bootstrap\bower.json" />
     <Content Include="Assets\admin\libs\bootstrap\CHANGELOG.md" />
@@ -5649,15 +5661,6 @@
     <Content Include="Assets\admin\libs\angular-local-storage\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\admin\libs\angular\.bower.json" />
-    <Content Include="Assets\admin\libs\angular\angular.min.js.gzip" />
-    <Content Include="Assets\admin\libs\angular\angular.min.js.map" />
-    <Content Include="Assets\admin\libs\angular\bower.json" />
-    <Content Include="Assets\admin\libs\angular\LICENSE.md" />
-    <Content Include="Assets\admin\libs\angular\package.json" />
-    <Content Include="Assets\admin\libs\angular\README.md" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="ConnectionStrings.config" />
   </ItemGroup>
   <ItemGroup>
@@ -5797,6 +5800,41 @@
     <Content Include="Assets\admin\libs\jquery-validation\package.json" />
     <Content Include="Assets\admin\libs\jquery-validation\README.md" />
     <Content Include="Assets\admin\libs\jquery-validation\validation.jquery.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\admin\libs\checklist-model\.bower.json" />
+    <Content Include="Assets\admin\libs\checklist-model\bower.json" />
+    <Content Include="Assets\admin\libs\checklist-model\checklist-model.nuspec" />
+    <Content Include="Assets\admin\libs\checklist-model\readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\admin\libs\angular-ui-router\.bower.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\artifacts.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\bower.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\CHANGELOG.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\CONTRIBUTING.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\DOCS.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\ISSUE_TEMPLATE.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\LICENSE" />
+    <Content Include="Assets\admin\libs\angular-ui-router\migrate\migrate.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\README.md" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\angular-ui-router.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\resolveService.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\stateEvents.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.min.js.map" />
+    <Content Include="Assets\admin\libs\angular-ui-router\tslint.json" />
+    <Content Include="Assets\admin\libs\angular-ui-router\yarn.lock" />
+    <Content Include="Assets\admin\libs\angular\.bower.json" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js.gzip" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js.map" />
+    <Content Include="Assets\admin\libs\angular\bower.json" />
+    <Content Include="Assets\admin\libs\angular\LICENSE.md" />
+    <Content Include="Assets\admin\libs\angular\package.json" />
+    <Content Include="Assets\admin\libs\angular\README.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
