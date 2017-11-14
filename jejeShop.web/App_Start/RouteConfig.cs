@@ -24,6 +24,18 @@ namespace jejeShop.Web
            defaults: new { controller = "Account", action = "Register", id = UrlParameter.Optional },
            namespaces: new string[] { "jejeShop.Web.Controllers" }
        );
+            routes.MapRoute(
+               name: "Confirm Order",
+               url: "xac-nhan-don-hang.html",
+               defaults: new { controller = "ShoppingCart", action = "ConfirmOrder", id = UrlParameter.Optional },
+               namespaces: new string[] { "jejeShop.Web.Controllers" }
+       );
+            routes.MapRoute(
+               name: "Cancel Order",
+               url: "huy-don-hang.html",
+               defaults: new { controller = "ShoppingCart", action = "CancelOrder", id = UrlParameter.Optional },
+               namespaces: new string[] { "jejeShop.Web.Controllers" }
+       );
            routes.MapRoute(
            name: "ContactDetail",
            url: "lien-he.html",

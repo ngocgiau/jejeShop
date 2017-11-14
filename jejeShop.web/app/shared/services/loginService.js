@@ -28,7 +28,6 @@
             });        
             return deferred.promise;
         }
-
         this.logOut = function () {
             apiService.post('/api/account/logout', null, function (response) {
                 authenticationService.removeToken();
@@ -39,5 +38,6 @@
             }, null);
 
         }
+       
     }]);
 })(angular.module('jejeShop.common'));

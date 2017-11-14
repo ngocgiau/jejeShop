@@ -149,6 +149,14 @@
     <Compile Include="Migrations\201710130524176_FixBugFooter.Designer.cs">
       <DependentUpon>201710130524176_FixBugFooter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710171804003_changOrderDatail.cs" />
+    <Compile Include="Migrations\201710171804003_changOrderDatail.Designer.cs">
+      <DependentUpon>201710171804003_changOrderDatail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710211842080_RevenuesStatisticSP.cs" />
+    <Compile Include="Migrations\201710211842080_RevenuesStatisticSP.Designer.cs">
+      <DependentUpon>201710211842080_RevenuesStatisticSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ApplicationGroupRepository.cs" />
@@ -237,6 +245,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710130524176_FixBugFooter.resx">
       <DependentUpon>201710130524176_FixBugFooter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710171804003_changOrderDatail.resx">
+      <DependentUpon>201710171804003_changOrderDatail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710211842080_RevenuesStatisticSP.resx">
+      <DependentUpon>201710211842080_RevenuesStatisticSP.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

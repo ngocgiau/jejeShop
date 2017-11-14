@@ -12,5 +12,6 @@ namespace jejeShop.Web.Models
         public int ProductID { set; get; }
 
         public int Quantity { set; get; }
+        public decimal Price { set; get; }
     }
 }

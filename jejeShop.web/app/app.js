@@ -7,6 +7,7 @@
          'jejeShop.application_groups',
          'jejeShop.application_roles',
          'jejeShop.application_users',
+         'jejeShop.statistics',
          'jejeShop.common'])
         .config(config)
         .config(configAuthentication);
